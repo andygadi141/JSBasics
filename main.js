@@ -120,4 +120,77 @@ Array.from(children).forEach(child => {
 children[1].style.backgroundColor = "lightblue";
 
 // SYNTAX AND VARIABLES, SCOPE
-// VARIABLES
+// variable = A container that stores a value.
+//            Behaves as if it were the value it contains.
+// 1. declaration let x;
+// 2.assignment   x = 100;
+//Numbers
+let age = 25;
+let price = 10.99;
+let gpa = 3.0;
+
+console.log(typeof gpa);
+console.log(`You are ${age} years old`);
+console.log(`The price is $${price}`);
+console.log(`Your gpa is: ${gpa}`);
+
+// Strings
+let firstName = "Bro";
+let favoriteFood = "spaghetti";
+let email = "broski@email.com";
+
+console.log(typeof firstName);
+console.log(`Your name is ${firstName}`);
+console.log(`You favorite food is ${favoriteFood}`);
+console.log(`Your email is ${email}`);
+
+// Booleans 
+let online = false;
+let forSale = true;
+let student = true;
+
+console.log(typeof online);
+console.log(`Bro is online: ${online}`);
+console.log(`Is this car for sale: ${forSale}`);
+console.log(`Enrolled: ${student}`);
+
+// Exercise
+let fullName = "The Bro";
+let myAge = 21;
+let amIStudent = true;
+
+document.getElementById("p1").textContent = `My full name is ${fullName}`;
+document.getElementById("p2").textContent = `My age is ${myAge}`;
+document.getElementById("p3").textContent = `Student: ${amIStudent}`;
+
+// VARIABLE SCOPE
+// variable scope = where a variable is recognized
+//                  and accessible (local vs global) 
+// NOT recommended to declare global variables in a LARGE PROGRAM      
+let x = 1;
+let y = 2;
+let z = 3;
+
+function1()
+function2()
+function3()
+
+
+function function1() {
+  console.log(x);
+}
+
+function function2() {
+  let y = 8;
+  console.log(y);
+}
+
+function function3() {
+  let z = 10;
+  console.log(z);
+}
+
+// ARITHMETIC, TERNARY, LOGICAL, SPREAD
+// arithmetic operators = operands (values, variables, etc.)
+//                        operators (+ - * /)
+//                        ex. 11 = x + 5;
