@@ -303,3 +303,155 @@ let sprVegetables = ["onions", "celery", "potatoes"];
 let sprFoodList = [sprFruits[1], ...sprVegetables, "eggs", "milk"];
 
 console.log(sprFoodList);
+
+// CONDITIONALS, SWITCHES
+// IF STATEMENTS = if a condition is true, execute some code
+//                 if not, do something else
+let ifAge = 18;
+
+if(ifAge >= 18) {
+  console.log("You are an adult");
+} else {
+  console.log("You must be 18+ to be here")
+}
+
+let ifTime = 19;
+
+if(ifTime < 12) {
+  console.log("Good Morning");
+} else {
+  console.log("Good Afternoon");
+}
+
+// Boolean
+let ifIsStudent = true;
+
+if(ifIsStudent) {
+  console.log("You are a student");
+} else {
+  console.log("You are NOT a student");
+}
+
+// Nested
+let nesAge = 18;
+let nesHasLicense = true;
+
+if(nesAge >= 16) {
+  console.log("You are old enough to have drive");
+
+  if(nesHasLicense) {
+    console.log("You have a license!");
+  } else {
+    console.log("You DO NOT have a license");
+  }
+
+} else {
+  console.log("You are NOT old enough to drive");
+}
+
+// Else If
+let elIfAge = 0;
+
+if(elIfAge >= 100) {
+  console.log("You are TOO OLD for this site");
+
+} else if(elIfAge == 0) {
+  console.log("You can't enter. You were just born");
+
+} else if(elIfAge >= 18) {
+  console.log("You are old enough to enter this site");
+
+} else if(elIfAge < 0) {
+  console.log();
+
+} else{
+  console.log("You must be 18+ to enter this site")
+}
+
+// Project
+const ifMyText = document.getElementById("ifMyText");
+const ifMySubmit = document.getElementById("ifMySubmit");
+const ifResultElement = document.getElementById("ifResultElement");
+let projAge;
+
+ifMySubmit.onclick = function() {
+
+  projAge = ifMyText.value;
+  projAge = Number(projAge);
+
+  if(projAge >= 100) {
+    ifResultElement.textContent = "You are TOO OLD for this site";
+    console.log("You are TOO OLD for this site");
+  
+  } else if(projAge == 0) {
+    ifResultElement.textContent = "You can't enter. You were just born";
+    console.log("You can't enter. You were just born");
+  
+  } else if(projAge >= 18) {
+    ifResultElement.textContent = "You are old enough to enter this site";
+    console.log("You are old enough to enter this site");
+  
+  } else if(projAge < 0) {
+    ifResultElement.textContent = "Your age can't be below zero";
+    console.log("Your age can't be below zero");
+  
+  } else{
+    ifResultElement.textContent = "You must be 18+ to enter this site";
+    console.log("You must be 18+ to enter this site")
+  }
+
+}
+
+// SWITCHES
+let swiDay = 2;
+
+switch(swiDay) {
+  case 1:
+    console.log("It is Monday");
+    break;
+  case 2:
+    console.log("It is Tuesday");
+    break;
+  case 3:
+    console.log("It is Wednesday");
+    break;
+  case 4:
+    console.log("It is Thursday");
+    break;
+  case 5:
+    console.log("It is Friday");
+    break;
+  case 6:
+    console.log("It is Saturday");
+    break;
+  case 7:
+    console.log("It is Sunday");
+    break;
+  default:
+    console.log(`${swiDay} is NOT a day`);  
+}
+
+let swiScore = 57;
+let swiLetterGrade;
+
+switch(true) {
+  case swiScore >= 90:
+    swiLetterGrade = "A";
+    break;
+  case swiScore >= 80:
+    swiLetterGrade = "B";
+    break;
+  case swiScore >= 70:
+    swiLetterGrade = "C";
+    break;
+  case swiScore >= 60:
+    swiLetterGrade = "D";
+    break;
+  case swiScore < 60 && swiScore >= 50:
+    swiLetterGrade = "E";
+    break;
+  default:
+    swiLetterGrade = "F";
+}
+
+console.log(swiLetterGrade);
