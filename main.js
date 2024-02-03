@@ -194,3 +194,112 @@ function function3() {
 // arithmetic operators = operands (values, variables, etc.)
 //                        operators (+ - * /)
 //                        ex. 11 = x + 5;
+let numStudents = 31;
+  // numStudents = numStudents + 1;
+  // numStudents = numStudents - 1;
+  // numStudents = numStudents * 2;
+  // numStudents = numStudents / 2;
+  // numStudents = numStudents ** 2; // EXPONENTS
+let extraStudents = numStudents % 3;
+
+// Augmented assignment operators
+  numStudents += 1;
+  numStudents -= 1;
+  numStudents *= 2;
+  numStudents /= 2;
+  numStudents **= 2;
+  numStudents %= 2;
+  
+// Increment/decrement operator
+numStudents++;
+numStudents--;
+
+console.log(numStudents)
+
+// Operator precedence
+  /* 
+  1. Parenthesis()
+  2. Exponents
+  3. Multiplication & Division & Modulo
+  4. Addition & Subtraction
+  */
+let result = 15 % 5 + 8 /2;
+console.log(result)
+
+// TERNARY OPERATOR
+// ternary operator = a shortcut to if{} and else{} statements
+//                    helps to assign a variable based on a condition
+//                    condition ? codeIfTrue : codeIfFalse;
+let terAge = 21;
+let terMessage = terAge >= 18 ? "You are an adult :(" : "You are a baby!"
+
+console.log(terMessage);
+
+let time = 12;
+let terTime = time >= 12 ? "Good Afternoon!" : "Good morning!";
+
+console.log(terTime);
+
+let terStudent = true;
+let terIsStudent = terStudent = true ? "You are a student!" : "You are NOT a student";
+
+console.log(terIsStudent)
+
+let purchaseAmount = 143.4;
+let terTotal = purchaseAmount >= 100 ? purchaseAmount - (purchaseAmount * 0.10) : purchaseAmount;
+
+console.log(terTotal);
+
+// LOGICAL OPERATORS
+// logical operators =  used to combine or manipulate boolean values 
+//                      (true or false)
+//                      AND = &&
+//                      OR  = ||
+//                      NOT = !
+const andTemp = -20;
+
+if(andTemp <= 0 && andTemp >= 35){
+  console.log("The weather id GOOD");
+} else {
+  console.log("The weather is BAD");
+}
+
+const onTemp = 90;
+
+if(onTemp <= 0 || onTemp > 30) {
+  console.log("The wether is GOOD");
+} else {
+  console.log("The weather is BAD");
+}
+
+const isCloudy = true;
+
+if(!isCloudy) {
+  console.log("Too bad is cloudy");
+}else {
+  console.log("Is sunny!");
+}
+
+// SPREAD OPERATOR
+// spread operator =  ... allows an iterable such as an
+//                    array or string to be expanded
+//                    into separate elements
+//                    (unpacks the elements)
+// Array
+let sprNum = [1, 2, 3, 4, 5];
+let sprMax = Math.max(...sprNum);
+let sprMin = Math.min(...sprNum);
+
+console.log(sprMin);
+
+// String
+let sprName = "The Bro";
+let sprLetters = [...sprName].join(".");
+
+console.log(sprLetters);
+
+let sprFruits = ["apple", "orange", "banana"];
+let sprVegetables = ["onions", "celery", "potatoes"];
+let sprFoodList = [sprFruits[1], ...sprVegetables, "eggs", "milk"];
+
+console.log(sprFoodList);
