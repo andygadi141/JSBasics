@@ -546,14 +546,149 @@ for (let i = 0; i <= 20; i += 2) {
 console.log(`"break" is to BREAK OUT of the loop entirely`);
 console.log(`It breaks after "i === 12"`);
 for (let i = 0; i <= 20; i += 2) {
-
   if (i === 12) {
     break;
-
   } else {
-    console.log(i)
-  
-  };
-
+    console.log(i);
+  }
 }
+
+// FUNCTIONS, EXPRESSIONS & ARROW
+// function = A section of reusable code.
+//            Declare code once, use it whenever you want.
+//            Call the function to execute that code.
+function funHappyBirth() {
+  console.log("Happy Birthday!");
+  console.log("Happy Birthday!");
+  console.log("Happy Birthday!");
+}
+
+funHappyBirth();
+
+// Arguments/Parameters
+function paraHappyBirth(name, age) {
+  console.log("Happy birthday to you!");
+  console.log("Happy birthday to you!");
+  console.log(`Happy birthday dear ${name}!`);
+  console.log("Happy birthday to you!");
+  console.log(`You are ${age} years old!`);
+}
+
+paraHappyBirth("Bro", 21);
+paraHappyBirth("Denji", 17);
+paraHappyBirth("Asa", 17);
+
+// Return
+function addXY(x, y) {
+  let result = x + y;
+  return result;
+}
+
+let funcAnswer = addXY(2, 4);
+console.log(funcAnswer);
+
+function funcAdd(x, y) {
+  return x + y;
+}
+function funcSubtract(x, y) {
+  return x - y;
+}
+function funcMulti(x, y) {
+  return x * y;
+}
+function funcDivi(x, y) {
+  return x / y;
+}
+function funcIsEven(number) {
+  if (number % 2 === 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+function funcIsOdd(number) {
+  return number % 2 != 0 ? true : false;
+}
+
+console.log(funcIsEven(10));
+console.log(funcIsOdd(33));
+
+function isValidEmail(email) {
+  if (email.includes("@")) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+console.log(isValidEmail("bro.com"));
+console.log(isValidEmail("bro@com"));
+
+// FUNCTION EXPRESSIONS
+// function expressions = a way to define functions as
+//                        values or variables
+//  1. Callbacks in asynchronous operations
+//  2. Higher-Order Functions
+//  3. Closures
+//  4. Event Listeners
+// As a VARIABLE
+const funExHello = function () {
+  console.log("Hello!");
+};
+funExHello();
+
+// As a VALUE
+setTimeout(function () {
+  console.log("What's up!");
+}, 3000);
+
+const funExNums = [1, 2, 3, 4, 5, 6];
+const squared = funExNums.map(function (element) {
+  return Math.pow(element, 2);
+});
+const cubed = funExNums.map(function (element) {
+  return Math.pow(element, 3);
+});
+const funEvenNums = funExNums.filter(function (element) {
+  return element % 2 === 0;
+});
+const funOddNums = funExNums.filter(function (element) {
+  return element % 2 !== 0;
+});
+const funTotal = funExNums.reduce(function (accumulator, element) {
+  return accumulator - element;
+});
+
+console.log(funEvenNums);
+console.log(funOddNums);
+console.log(funTotal);
+
+// ARROW FUNCTIONS
+// arrow functions = a concise way to write function expressions
+//                   good for simple functions that you use only once
+const arrowHello = (name) => console.log(`Hello ${name}!`);
+
+arrowHello("Bro");
+
+// { } ARE NEEDED IF MORE than ONE statement
+const arrowAge = (age, bday) => {
+  console.log(`You are ${age} years old!`);
+  console.log(`Your birthday is in ${bday}`);
+};
+arrowAge(21, "Oct");
+
+//
+setTimeout( () => console.log("This is a callback!"), 3000);
+
+//
+const arrowNums = [1, 2, 3, 4, 5, 6];
+
+const arrowSquare = arrowNums.map((element) => Math.pow(element, 2));
+const arrowCube = arrowNums.map((element) => Math.pow(element, 3));
+const arrowEven = arrowNums.filter((element) => element % 2 === 0);
+const arrowOdd = arrowNums.filter((element) => element % 2 !== 0);
+const arrowTotal = arrowNums.reduce((accumulator, element) => accumulator + element);
+
+console.log(arrowTotal);
+
 
