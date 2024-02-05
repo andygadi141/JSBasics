@@ -678,7 +678,7 @@ const arrowAge = (age, bday) => {
 arrowAge(21, "Oct");
 
 //
-setTimeout( () => console.log("This is a callback!"), 3000);
+setTimeout(() => console.log("This is a callback!"), 3000);
 
 //
 const arrowNums = [1, 2, 3, 4, 5, 6];
@@ -687,8 +687,159 @@ const arrowSquare = arrowNums.map((element) => Math.pow(element, 2));
 const arrowCube = arrowNums.map((element) => Math.pow(element, 3));
 const arrowEven = arrowNums.filter((element) => element % 2 === 0);
 const arrowOdd = arrowNums.filter((element) => element % 2 !== 0);
-const arrowTotal = arrowNums.reduce((accumulator, element) => accumulator + element);
+const arrowTotal = arrowNums.reduce(
+  (accumulator, element) => accumulator + element
+);
 
 console.log(arrowTotal);
 
+// ARRAYS[ 2D, OBJECT, SHUFFLE]
+// array = a variable like structure that can
+//         hold more than 1 value
+let arrayFruits = ["apple", "orange", "banana"];
 
+arrayFruits[0] = "coconut";
+arrayFruits[3] = "apple";
+
+arrayFruits.push("grapes"); // Push element to the end
+arrayFruits.pop(); // Removes last element
+arrayFruits.unshift("melon"); // Adds element at the beginning
+arrayFruits.shift(); // Removes element from the beginning
+
+console.log(arrayFruits[0]);
+console.log(arrayFruits[1]);
+console.log(arrayFruits[2]);
+console.log(arrayFruits[3]);
+console.log(arrayFruits[4]);
+
+//
+let numOfFruits = arrayFruits.length;
+let arrayIndex = arrayFruits.indexOf("coconut");
+let arrayNonIndex = arrayFruits.indexOf("mango");
+
+console.log(numOfFruits);
+console.log(arrayIndex);
+console.log(arrayNonIndex);
+
+//
+for (let i = 0; i < arrayFruits.length; i += 2) {
+  console.log(arrayFruits[i]);
+}
+
+//
+for (let i = arrayFruits.length - 1; i >= 0; i--) {
+  console.log(arrayFruits[i]);
+}
+
+//Shortcut of /\
+// Advanced loop called, 'for of loop'
+// Iterates through ARRAYS & STRINGS
+for (let fruit of arrayFruits) {
+  console.log(fruit);
+}
+
+//
+let sortFruits = ["mango", "strawberry", "peach", "pineapple"];
+
+// .sort() IN ALPHABETICAL ORDER
+// .reverse() ALPHABETICAL ORDER
+sortFruits.sort().reverse();
+
+for (let sort of sortFruits) {
+  console.log(sort);
+}
+
+// 2D array = multi-dimensional array that stores a matrix
+//            of data in rows and columns.
+//            Useful for games, spreadsheets, or representing images 
+const matrix = [[1, 2, 3, 4], 
+                [5, 6, 7], 
+                [8, 9, ' ', '#'],
+                [0]];
+
+matrix[0][3] = 'x';
+matrix[3][0] = 'x';
+
+for(let row of matrix) {
+  let rowString = row.join(' ');
+  console.log(rowString);
+}
+
+// ARRAY OF OBJECTS
+const aOFruits = [{name: "apple", color: "red", calories: 95}, 
+                  {name: "orange", color: "orange", calories: 45}, 
+                  {name: "banana", color: "yellow", calories: 105}, 
+                  {name: "coconut", color: "white", calories: 159}, 
+                  {name: "pineapple", color: "yellow", calories: 37}];
+          
+console.log(aOFruits[0]);
+console.log(aOFruits[1].name);
+
+// PUSH
+aOFruits.push({name: "grapes", color: "purple", calories: 62});
+console.log(aOFruits);
+
+// POP
+aOFruits.pop();
+console.log(aOFruits);
+
+// SPLICE
+// aOFruits.splice(2);
+aOFruits.splice(1, 2);
+console.log(aOFruits);
+
+//
+const aOCars = [{name: "Porsche", color: "grey", max: 124}, 
+                {name: "Lamborghini", color: "orange", max: 145}, 
+                {name: "Ferrari", color: "red", max: 133}, 
+                {name: "Aston", color: "grey", max: 129}, 
+                {name: "Alfa", color: "red", max: 117}];
+
+// ---------- forEach() ----------
+aOCars.forEach(car => console.log(car.name));
+
+// ---------- map() ----------
+const carMake = aOCars.map(car => car.name);
+const carColor = aOCars.map(car => car.color)
+const carMax = aOCars.map(car => car.max)
+
+console.log(carMake);
+console.log(carColor);
+console.log(carMax);
+
+// ---------- filter() ----------
+const redCars = aOCars.filter(car => car.color === "red");
+const carO130 = aOCars.filter(car => car.max >= 130);
+const carU130 = aOCars.filter(car => car.max < 130);
+
+console.log(redCars);
+console.log(carO130);
+console.log(carU130);
+
+// ---------- reduce() ----------
+const reCar = aOCars.reduce((max, car) => car.max > max.max ? car : max);
+const reMinCar = aOCars.reduce((min, car) => car.max < min.max ? car : min);
+
+console.log(reCar);
+console.log(reMinCar);
+
+
+// SHUFFLE AN ARRAY
+// Fisher-Yates algorithm
+const cards = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K'];
+
+// NOT RECOMMENDED for shuffling \/
+// cards.sort(() => Math.random() - 0.5);
+
+shuffle(cards);
+
+
+console.log(cards);
+
+function shuffle(array){
+  for(let i = array.length - 1; i > 0; i--){
+      const random = Math.floor(Math.random() * (i + 1));
+
+      [array[i], array[random]] = [array[random], array[i]];
+  }
+}
